@@ -58,7 +58,7 @@ Output: Dog - Hungry, Cat - Sad, Bird - Happy
 
 ## 📦 Installation
 ### Clone the repository:
-[Clone here](https://github.com/Hariarul/Animal-Emotion-Detection-)
+git clone https://github.com/Hariarul/Animal-Emotion-Detection-
  
 ### Install dependencies:
 
