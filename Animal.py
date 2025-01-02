@@ -31,10 +31,6 @@ def predict_emotion(animal_roi, model, animal_class):
     resized_roi = cv2.resize(animal_roi, (150, 150)) / 255.0
     predictions = model.predict(np.expand_dims(resized_roi, axis=0))
 
-    # Debug the predictions
-    print(f"Predictions: {predictions}")
-    print(f"Predictions shape: {predictions.shape}")
-
     # Define emotion labels based on the animal class
     if animal_class == "dog":
         emotion_labels = ["angry", "happy", "relaxed", "sad"]
@@ -110,7 +106,7 @@ if uploaded_file is not None:
                     draw_label(frame_resized, currentClass.capitalize(), emotion, x1, y1, x2, y2, color)
 
         # Show processed image
-        st.image(frame_resized, channels="BGR", caption="Processed Image", use_column_width=True)
+        st.image(frame_resized, channels="BGR", caption="Processed Image", use_container_width=True)
 
     elif uploaded_file.type == "video/mp4":
         # If it's a video, process it frame by frame
@@ -145,7 +141,7 @@ if uploaded_file is not None:
                         cv2.rectangle(frame_resized, (x1, y1), (x2, y2), color, 2)
                         draw_label(frame_resized, currentClass.capitalize(), emotion, x1, y1, x2, y2, color)
 
-            frame_placeholder.image(frame_resized, channels="BGR", caption="Processing...", use_column_width=True)
+            frame_placeholder.image(frame_resized, channels="BGR", caption="Processing...", use_container_width=True)
     else:
         st.write("Please upload a valid image or video file.")
 else:
