@@ -64,6 +64,9 @@ git clone https://github.com/Hariarul/Animal-Emotion-Detection-
 
 pip install -r requirements.txt  
 
+### Run app:
+streamlit run Animal.py
+
 ## 🚨 Notification Example
 
 ### Pop-up Notification Example:
